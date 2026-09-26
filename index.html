@@ -123,6 +123,16 @@
     cursor:pointer;
 }
 
+.leaf {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+        transform-origin: center; 
+    transform: rotateY(0deg);
+    transition: transform 1.05s cubic-bezier(.4,.15,.2,1);
+    cursor: pointer;
+}
+  
 .scene.opened .leaf{
     transform:rotateY(-180deg);
 }
