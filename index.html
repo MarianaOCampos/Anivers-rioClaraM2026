@@ -92,9 +92,9 @@
     gap: var(--gap);
     justify-content:center;
     align-items:flex-start;
-    perspective: 2600px;
+    perspective: 1800px;
     width:100%;
-  }
+}
 
   .leaf-wrap, .right-page{
     width: var(--page-w);
@@ -102,28 +102,30 @@
     position:relative;
   }
 
-  .leaf-wrap{
+.leaf-wrap{
     transform: translateX(calc(50% + (var(--gap) / 2)));
     transition: transform .9s cubic-bezier(.3,.7,.2,1);
     z-index:3;
-  }
-  .scene.opened .leaf-wrap{
-    transform: translateX(0);
-    z-index:1;
-  }
+}
 
-  .leaf{
-    position:absolute; inset:0;
-    transform-style: preserve-3d;
-    transform-origin: right center;
-    transform: rotateY(0deg);
-    transition: transform 1.05s cubic-bezier(.4,.15,.2,1);
+.scene.opened .leaf-wrap{
+    transform: translateX(0);
+    z-index:3;
+}
+
+.leaf{
+    position:absolute;
+    inset:0;
+    transform-style:preserve-3d;
+    transform-origin:right center;
+    transform:rotateY(0deg);
+    transition:transform 1.05s cubic-bezier(.4,.15,.2,1);
     cursor:pointer;
-  }
-  .scene.opened .leaf{
-    transform: rotateY(-180deg);
-    cursor: default;
-  }
+}
+
+.scene.opened .leaf{
+    transform:rotateY(-180deg);
+}
 
   .face{
     position:absolute; inset:0;
@@ -152,7 +154,7 @@
   }
   .scene.opened + .cover-hint{ opacity:0; height:0; margin:0; pointer-events:none; }
 
-  .right-page{
+ .right-page{
     opacity:0;
     pointer-events:none;
     transition: opacity .5s ease .45s;
@@ -160,8 +162,8 @@
     overflow:hidden;
     box-shadow: 0 20px 45px rgba(50,25,10,0.30);
     background:#fff;
-    z-index:2;
-  }
+    z-index:1;
+}
   .scene.opened .right-page{
     opacity:1;
     pointer-events:auto;
